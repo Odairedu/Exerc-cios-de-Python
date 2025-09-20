@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-# --- Classes ---
+#Classes
 @dataclass
 class Cliente:
     nome: str
@@ -15,7 +15,7 @@ class Agendamento:
     dia: str
     hora: str
 
-# --- Dados iniciais ---
+#Dados iniciais
 clientes = []
 agendamentos = []
 
@@ -34,7 +34,7 @@ cortes = {
     "Barba": 25
 }
 
-# --- Funções auxiliares ---
+#Menu
 def menu(titulo, opcoes):
     print(f"\n--- {titulo} ---")
     for i, opcao in enumerate(opcoes, start=1):
@@ -42,6 +42,7 @@ def menu(titulo, opcoes):
     print("0 - Voltar")
     return input("Escolha: ")
 
+#Cadastrar cliente
 def cadastrar_cliente():
     nome = input("Nome: ")
     telefone = input("Telefone: ")
@@ -54,6 +55,7 @@ def cadastrar_cliente():
     print(f"Bem-vindo, {nome}!")
     return novo
 
+#Buscar cliente
 def buscar_cliente():
     telefone = input("Digite seu telefone: ")
     for c in clientes:
@@ -63,6 +65,7 @@ def buscar_cliente():
     print("Você ainda não se cadastrou.")
     return None
 
+#Buscar pelo corte
 def agendar_corte(cliente):
     if not cliente:
         print("Cadastre-se primeiro!")
@@ -114,7 +117,6 @@ def calcular_lucro():
     for b, total in lucro.items():
         print(f"{b}: R${total}")
 
-# --- Programa principal ---
 while True:
     escolha = menu("Barbearia", ["Cliente", "Funcionário"])
     
@@ -144,3 +146,4 @@ while True:
     elif escolha == "0":
         print("Saindo...")
         break
+
