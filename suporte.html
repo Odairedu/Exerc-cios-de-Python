@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital São Bento - Suporte</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #667eea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .left-side {
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 48px;
+        }
+
+        .branding {
+            text-align: center;
+        }
+
+        .icon-box {
+            width: 128px;
+            height: 128px;
+            background: #4169E1;
+            border-radius: 24px;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(65, 105, 225, 0.3);
+        }
+
+        .icon-box svg {
+            width: 64px;
+            height: 64px;
+            color: white;
+        }
+
+        .branding h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 12px;
+        }
+
+        .branding p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .form-side {
+            background: #E7F0FA;
+            padding: 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-header {
+            margin-bottom: 32px;
+        }
+
+        .form-header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 8px;
+        }
+
+        .form-header p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+            width: 20px;
+            height: 20px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 12px 12px 44px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: none;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4169E1;
+            box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15);
+        }
+
+        .form-group input:hover,
+        .form-group textarea:hover {
+            background-color: #f8f9fa;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: #4169E1;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(65, 105, 225, 0.3);
+        }
+
+        .submit-btn:hover {
+            background: #003366;
+            box-shadow: 0 6px 16px rgba(65, 105, 225, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .left-side {
+                display: none;
+            }
+
+            .form-side {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Lado Esquerdo - Branding -->
+        <div class="left-side">
+            <div class="branding">
+                <div class="icon-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <h2>Hospital São Bento</h2>
+                <p>Estamos aqui para ajudar você</p>
+            </div>
+        </div>
+
+        <!-- Lado Direito - Formulário -->
+        <div class="form-side">
+            <div class="form-header">
+                <h1>Fale Conosco</h1>
+                <p>Preencha o formulário abaixo e nossa equipe entrará em contato</p>
+            </div>
+
+            <form id="supportForm">
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                        <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Mensagem</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon" style="top: 16px; transform: none;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                        <textarea id="message" name="message" placeholder="Descreva sua dúvida ou mensagem..." required></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                    </svg>
+                    Enviar Mensagem
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('supportForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const submitBtn = document.getElementById('submitBtn');
+            
+            // Validação básica
+            if (!name || !email || !message) {
+                alert('Por favor, preencha todos os campos.');
+                return;
+            }
+            
+            if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                alert('Por favor, insira um email válido.');
+                return;
+            }
+            
+            // Desabilita o botão durante o envio
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Enviando...';
+            
+            // Aqui você faria a chamada para o backend
+            // Por enquanto, simula um envio
+            setTimeout(() => {
+                alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+                document.getElementById('supportForm').reset();
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg> Enviar Mensagem';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
